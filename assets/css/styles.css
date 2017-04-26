@@ -1,0 +1,68 @@
+  html,body
+  {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body
+  {
+    overflow-x: hidden;
+  }
+
+  #uploadBtn
+  {
+    padding: 6px 18px;
+    margin: 8px 10px;
+    color: #fff;
+    border-color: #fff;
+  }
+
+  #header-image
+  {
+    background: url('https://images.pexels.com/photos/159621/open-book-library-education-read-159621.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+    height: 300px;
+    background-position: center;
+    background-repeat: no repeat;
+    background-size: cover;
+  }
+
+  nav.myNavbar
+  {
+    margin-bottom:1px;
+    background-color: #eb3232;
+    border-color: #d24343;
+    border-radius:0px;
+  }
+
+  nav.myNavbar .navbar-brand
+  {
+    color: #fff;
+  }
+
+  nav .notesNav
+  {
+    background: #eb3232;
+    border: #d24343;
+    border-radius: 0px;
+  }
+
+  .notesNav .navbar-nav li a
+  {
+    color: #fff;
+  }
+
+  .notesNav .navbar-nav li a:hover,
+  {
+    background: #ddd;
+    color: #434343;
+    outline: 0;
+  }
+
+  .notesNav .navbar-nav li a:active,
+  .notesNav .navbar-nav li a:focus
+  {
+    outline: 0;
+    color: #fff;
+  }
