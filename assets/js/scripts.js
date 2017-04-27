@@ -106,6 +106,7 @@
 			});
 
 		 $("#submitBtn").on('click', function(){
+
 			 var docName = $("#fileName").val();
 			 var docDescription = $("#description").val();
 
@@ -114,26 +115,57 @@
 
 			 var myFile = $("input[type=file]")[0].file[0];
 
-			 var formData = new formData();
+			 if(docName == undefined || docName == "")
+			 {
+				 alert("all fields are required");
+				 return false;
+			 }
+
+			 if(docDescription == undefined || docDescription == "")
+			 {
+				 alert("all fields are required");
+				 return false;
+			 }
+
+			 if(subject == undefined || subject == "")
+			 {
+				 alert("all fields are required");
+				 return false;
+			 }
+
+			 if(documentType == undefined || documentType == "")
+			 {
+				 alert("all fields are required");
+				 return false;
+			 }
+
+			 if(myFile == undefined || myFile == "")
+			 {
+				 alert("all fields are required");
+				 return false;
+			 }
+
+			 var formdata = new FormData();
 
 			 formdata.append('file', myFile);
-			 formdata.append('document_type', documentType);
-			 formdata.append('doc_description', docDescription);
-			 formdata.append('doc_name', docName);
-			 formdata.append('category', subject);
+			 formdata.append('document_type' , documentType);
+			 formdata.append('doc_description' , docDescription);
+			 formdata.append('doc_name' , docName);
+			 formdata.append('category' , subject);
 
-		$.ajax({
-			url: 'http://acadprojects.com/py/notes/sharing/note',
-			data: formdata,
-			type: 'POST',
-			contentType: false,
-			processData: false,
-			success: function(result)
-			{
-				alert("Submitted");
-			}
-		});
+			 $.ajax({
+				 url: 'http://acadprojects.com/py/notes/sharing/note',
+				 data: formdata,
+				 type: 'POST',
+				 contentType: false,
+				 processData: false,
+				 success: function(result)
+				 {
+					 alert("Submitted");
+					 location.reload();
+				 }
+			 });
 
-	});
+		 });
 
-});
+	 });
