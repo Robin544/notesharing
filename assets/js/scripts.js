@@ -6,7 +6,7 @@
 			function getNotes(dataUrl)
 			{
 			    $.ajax({
-			url: "http://acadprojects.com/py/notes/sharing/note",
+			url: dataUrl,
 			type: "GET",
 			success: function(result){
 			     console.log(result);
@@ -15,7 +15,7 @@
 			 $('#questionPapers tbody').empty();
 			 $('#projectReports tbody').empty();
 
-			     var  myNotes = result.notes;
+			 var  myNotes = result.notes;
 
 			 var length = myNotes.length;
 
@@ -62,8 +62,7 @@
 			}});
 		}
 
-
-		$('#arts').on('click',function(){
+		 $('#arts').on('click',function(){
 
 		  $("#notesNavigation ul li").removeClass('active');
 
@@ -74,36 +73,67 @@
 
 		});
 
-		$('#engineering').on('click',function(){
-		  $("#notesNavigation ul li").removeClass('active');
-		  $(this).parent().addClass('active');
+		 $('#engineering').on('click',function(){
+ 		  $("#notesNavigation ul li").removeClass('active');
+ 		  $(this).parent().addClass('active');
 
-		   var url = "http://acadprojects.com/py/notes/sharing/note?category=engineering";
-		   getNotes(url);
-		});
+ 		   var url = "http://acadprojects.com/py/notes/sharing/note?category=engineering";
+ 		   getNotes(url);
+ 		});
 
-		$('#science').on('click',function(){
-		  $("#notesNavigation ul li").removeClass('active');
-		  $(this).parent().addClass('active');
+			$('#science').on('click',function(){
+			  $("#notesNavigation ul li").removeClass('active');
+			  $(this).parent().addClass('active');
 
-		   var url = "http://acadprojects.com/py/notes/sharing/note?category=science";
-		   getNotes(url);
-		});
+			   var url = "http://acadprojects.com/py/notes/sharing/note?category=science";
+			   getNotes(url);
+			});
 
-		$('#maths').on('click',function(){
-		  $("#notesNavigation ul li").removeClass('active');
-		  $(this).parent().addClass('active');
+			$('#maths').on('click',function(){
+			  $("#notesNavigation ul li").removeClass('active');
+			  $(this).parent().addClass('active');
 
-		   var url = "http://acadprojects.com/py/notes/sharing/note?category=mathematics";
-		   getNotes(url);
-		});
+			   var url = "http://acadprojects.com/py/notes/sharing/note?category=mathematics";
+			   getNotes(url);
+			});
 
-		$('#latest').on('click',function(){
-		  $("#notesNavigation ul li").removeClass('active');
-		  $(this).parent().addClass('active');
+			$('#latest').on('click',function(){
+				$("#notesNavigation ul li").removeClass('active');
+				$(this).parent().addClass('active');
 
-		   var url = "http://acadprojects.com/py/notes/sharing/note";
-		   getNotes(url);
+				 var url = "http://acadprojects.com/py/notes/sharing/note";
+				 getNotes(url);
+			});
+
+		 $("#submitBtn").on('click', function(){
+			 var docName = $("#fileName").val();
+			 var docDescription = $("#description").val();
+
+			 var subject = $("#subject").val();
+			 var documentType = $("#documentType").val();
+
+			 var myFile = $("input[type=file]")[0].file[0];
+
+			 var formData = new formData();
+
+			 formdata.append('file', myFile);
+			 formdata.append('document_type', documentType);
+			 formdata.append('doc_description', docDescription);
+			 formdata.append('doc_name', docName);
+			 formdata.append('category', subject);
+
+		$.ajax({
+			url: 'http://acadprojects.com/py/notes/sharing/note',
+			data: formdata,
+			type: 'POST',
+			contentType: false,
+			processData: false,
+			success: function(result)
+			{
+				alert("Submitted");
+			}
 		});
 
 	});
+
+});
