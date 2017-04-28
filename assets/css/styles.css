@@ -90,3 +90,14 @@
     z-index: 1062;
     color: #d7ebec;
   }
+
+@media(max-width: 500px)
+{
+  html,body
+  {
+    width: 90%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+}
