@@ -66,3 +66,27 @@
     outline: 0;
     color: #fff;
   }
+
+  #loader
+  {
+    display: none;
+  }
+
+  .overlay
+  {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    opacity: 0.5;
+    background: black;
+    z-index: 1055;
+  }
+
+  .loading
+  {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 1062;
+    color: #d7ebec;
+  }

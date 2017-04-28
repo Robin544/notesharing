@@ -5,6 +5,8 @@
 
 			function getNotes(dataUrl)
 			{
+				$("#loader").css('display', 'block');
+
 			    $.ajax({
 			url: dataUrl,
 			type: "GET",
@@ -59,13 +61,14 @@
 
 
 			 }
+
+			 $("#loader").css('display', 'none');
+			 
 			}});
 		}
 
 		 $('#arts').on('click',function(){
-
 		  $("#notesNavigation ul li").removeClass('active');
-
 		  $(this).parent().addClass('active');
 
 		  var url = "http://acadprojects.com/py/notes/sharing/note?category=arts";
@@ -106,6 +109,8 @@
 			});
 
 		 $("#submitBtn").on('click', function(){
+
+			 $("#loader").css('display', 'block');
 
 			 var docName = $("#fileName").val();
 			 var docDescription = $("#description").val();
@@ -161,7 +166,8 @@
 				 processData: false,
 				 success: function(result)
 				 {
-					 alert("Submitted");
+					 alert("Submitted!");
+					 $("#loader").css('display', 'none');
 					 location.reload();
 				 }
 			 });
