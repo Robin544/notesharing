@@ -123,30 +123,35 @@
 			 if(docName == undefined || docName == "")
 			 {
 				 alert("Please! Provide file name");
+				 $("#loader").css('display', 'none');
 				 return false;
 			 }
 
 			 if(docDescription == undefined || docDescription == "")
 			 {
 				 alert("Please! Provide description");
+				 $("#loader").css('display', 'none');
 				 return false;
 			 }
 
 			 if(subject == undefined || subject == "")
 			 {
 				 alert("Please! Select subject");
+				 $("#loader").css('display', 'none');
 				 return false;
 			 }
 
 			 if(documentType == undefined || documentType == "")
 			 {
 				 alert("Please! Select document");
+				 $("#loader").css('display', 'none');
 				 return false;
 			 }
 
 			 if(myFile == undefined || myFile == "")
 			 {
 				 alert("Please! Select any file");
+				 $("#loader").css('display', 'none');
 				 return false;
 			 }
 
