@@ -118,11 +118,11 @@
 			 var subject = $("#subject").val();
 			 var documentType = $("#documentType").val();
 
-			 var myFile = $("input[type=file]");
+			 var myFile = $("input[type=file]")[0].file[0];
 
 			 if(docName == undefined || docName == "")
 			 {
-				 alert("Please! Provide name");
+				 alert("Please! Provide file name");
 				 return false;
 			 }
 

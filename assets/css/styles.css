@@ -70,10 +70,6 @@
   #loader
   {
     display: none;
-  }
-
-  .overlay
-  {
     height: 100%;
     position: absolute;
     width: 100%;
