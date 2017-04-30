@@ -62,8 +62,8 @@
 
 			 }
 
-			 $("#loader").css('display', 'none');
-			 
+			 $("#loader").hide();
+
 			}});
 		}
 
@@ -122,31 +122,31 @@
 
 			 if(docName == undefined || docName == "")
 			 {
-				 alert("all fields are required");
+				 alert("Please! Provide name");
 				 return false;
 			 }
 
 			 if(docDescription == undefined || docDescription == "")
 			 {
-				 alert("all fields are required");
+				 alert("Please! Provide description");
 				 return false;
 			 }
 
 			 if(subject == undefined || subject == "")
 			 {
-				 alert("all fields are required");
+				 alert("Please! Select subject");
 				 return false;
 			 }
 
 			 if(documentType == undefined || documentType == "")
 			 {
-				 alert("all fields are required");
+				 alert("Please! Select document");
 				 return false;
 			 }
 
 			 if(myFile == undefined || myFile == "")
 			 {
-				 alert("all fields are required");
+				 alert("Please! Select any file");
 				 return false;
 			 }
 
