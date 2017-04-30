@@ -62,7 +62,7 @@
 
 			 }
 
-			 $("#loader").hide();
+			 $("#loader").css('display', 'none');
 
 			}});
 		}
@@ -118,7 +118,7 @@
 			 var subject = $("#subject").val();
 			 var documentType = $("#documentType").val();
 
-			 var myFile = $("input[type=file]")[0].file[0];
+			 var myFile = $("input[type=file]");
 
 			 if(docName == undefined || docName == "")
 			 {
