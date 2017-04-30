@@ -64,7 +64,7 @@
 
 			 $("#loader").css('display', 'none');
 
-			}});
+		 }});
 		}
 
 		 $('#arts').on('click',function(){
@@ -118,7 +118,7 @@
 			 var subject = $("#subject").val();
 			 var documentType = $("#documentType").val();
 
-			 var myFile = $("input[type=file]")[0].file[0];
+			 var myFile = $("input[type=file]")[0].files[0];
 
 			 if(docName == undefined || docName == "")
 			 {
